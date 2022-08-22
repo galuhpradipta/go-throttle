@@ -17,7 +17,7 @@ const (
 
 func main() {
 	store := make(map[string]throttle.Limiter)
-	throttleHandler := throttle.New(window, store)
+	throttleHandler := throttle.New(store, window, limit)
 	_ = throttleHandler
 
 	http.HandleFunc("/", helloHandler)
